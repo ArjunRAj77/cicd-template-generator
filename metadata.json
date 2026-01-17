@@ -1,0 +1,5 @@
+{
+  "name": "cicd-template-generator",
+  "description": "AI-powered starter pack for CI/CD pipelines. Supports Azure Web Apps, Functions, AKS, AWS, GitHub Actions, and more.",
+  "requestFramePermissions": []
+}
