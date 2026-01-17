@@ -1,11 +1,16 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { WizardState, GeneratedFile } from "../types";
 
-// Helper to ensure API key exists
+// Helper to ensure API key exists and provide helpful error if missing
 const getApiKey = (): string => {
+  // In Vite + Vercel, this is replaced by the actual string value at build time
+  // or passed through if configured correctly in vite.config.ts
   const key = process.env.API_KEY;
-  if (!key) {
-    throw new Error("API_KEY environment variable is missing.");
+  
+  if (!key || key === 'undefined') {
+    throw new Error(
+      "API Key is missing. If you are deploying to Vercel, ensure you have added 'API_KEY' to your Project Settings > Environment Variables."
+    );
   }
   return key;
 };

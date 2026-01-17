@@ -77,6 +77,24 @@ npm run dev
 
 Open your browser to the URL shown in the terminal (usually `http://localhost:5173`).
 
+## 🚀 Deployment on Vercel
+
+This application is optimized for deployment on Vercel.
+
+1.  **Push your code to GitHub.**
+2.  **Import the project in Vercel:**
+    *   Go to the Vercel Dashboard and click "Add New... > Project".
+    *   Select your GitHub repository.
+3.  **Configure Environment Variables:**
+    *   In the "Environment Variables" section of the Vercel deployment screen.
+    *   Add a new variable named `API_KEY`.
+    *   Paste your Google Gemini API Key as the value.
+4.  **Deploy:**
+    *   Click "Deploy".
+    *   Vercel will detect Vite and build the application automatically.
+
+*Note: The `vite.config.ts` included in this project is configured to read the `API_KEY` from the build environment and inject it into the application, ensuring it works seamlessly in production.*
+
 ## 🏗️ Project Structure
 
 *   `App.tsx`: Main application entry point and layout shell.
@@ -85,6 +103,7 @@ Open your browser to the URL shown in the terminal (usually `http://localhost:51
 *   `services/geminiService.ts`: Handles communication with the Google GenAI SDK to generate and explain templates.
 *   `types.ts`: TypeScript definitions for the application state and domain models.
 *   `constants.ts`: Static configuration for UI options (Cloud providers, Icons, etc.).
+*   `vite.config.ts`: Configuration for the build process and environment variable handling.
 
 ## 🤝 Contributing
 
